@@ -17,14 +17,14 @@ const { NotImplementedError } = require('../extensions/index.js');
    if(this._strok(position)){
      if(position<1 || position>this.getLength()){
        this._pos()
-       throw new Error("Removing link position is out of range!");
+       throw new Error("where");
      }
      let index =position - 1;
      this.itog.splice(index ,1);
      return this;
    }
    this._pos();
-   throw new Error("Position must be intager number!")
+   throw new Error("hello")
   },
   reverseChain() {
     this.itog.reverse();
