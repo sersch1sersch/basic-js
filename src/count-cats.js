@@ -15,22 +15,22 @@ const { NotImplementedError } = require('../extensions/index.js');
  *
  */
  
-function countCats(/* matrix */) {
-  
+ function countCats(countCats) {
   let namber=0;
-  for(let i=0;i<countCats.length;i++){
-    let w=countCats[i];
-    let e=countCats[i].join(' ')
-    for(let z=0;z<e.length;z++){
-    let v = e[z];
-    if(!isFinite(v)){
-      namber++
-    }
+  let cat='^^';
+for(let i=0;i<countCats.length;i++){
+  let w=countCats[i];
+  console.log(w)
+  for(let z=0;z<w.length;z++){
+    let p=w[z];
+    console.log(p)
+    if(p===(cat)){
+    namber+=1
   }
   }
-  
-  return namber/2
-  }
+}
+return namber
+}
   
 
 
