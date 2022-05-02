@@ -10,26 +10,24 @@ const { NotImplementedError } = require('../extensions/index.js');
  * For aabbbc should return 2a3bc
  *
  */
-function encodeLine(str ) {
-  var arr = [],
-  counter=1;
-let t='';
-for (var i = 0; i < str.length; i++) {
-  if (str[i] === str[i + 1]) {
-      counter++;
+ function encodeLine(str) {
+  let itog = '';
+  let index = 0;
+  while (index < str.length) {
+    let bukva = str[index];
+    let koef = 1;
+    let indexElem = str[index + koef];
+    while (bukva === indexElem) {
+      koef += 1;
+      indexElem = str[index + koef];
+    }
+    index += koef;
+    if (koef > 1) {
+      itog += `${koef}`;
+    }
+    itog += `${bukva}`;
   }
-   else {
-      arr.push([counter, str[i]]);
-      counter=1;
-  }
-}
-
-for(z=0;z<arr.length;z++){
-let e=arr[z];
-t+=e.join('')
-}
-console.log(t)
-return t;
+  return itog;
 }
 
 module.exports = {
